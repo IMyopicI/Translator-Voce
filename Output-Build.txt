@@ -1,0 +1,4 @@
+﻿Updating the layout...
+========== Deploy: 1 succeeded, 0 failed, 0 skipped ==========
+========== Deploy completed at 14:26 and took 00,322 seconds ==========
+Deployment complete (0:00:00,046). Full package name: "com.companyname.mauiapp4_1.0.0.1_x64__9zz4h110yvjzm"

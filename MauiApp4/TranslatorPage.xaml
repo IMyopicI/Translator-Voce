@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.TranslatorPage"
+             Title="Translator Voce">
+             
+    <!-- Definirea unui grid pentru layout, centrat pe orizontală și cu o lățime de 531 -->
+    <Grid HorizontalOptions="Center" WidthRequest="531">
+        <!-- Definirea coloanelor gridului -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="56*" /> <!-- Prima coloană cu lățime flexibilă  -->
+            <ColumnDefinition Width="525*" /> <!-- A doua coloană cu lățime flexibilă -->
+        </Grid.ColumnDefinitions>
+
+        <!-- StackLayout pentru butoane, situat în coloana a doua -->
+        <StackLayout Orientation="Horizontal" Grid.Column="1" Margin="80,170,0,0">
+            <!-- Buton pentru înregistrare -->
+            <Button x:Name="RecordButton"
+                    Text="▶ Record ❚❚"
+                    HorizontalOptions="Start"
+                    BackgroundColor="#c4c6c4" 
+                    VerticalOptions="Start"
+                    Clicked="RecordButton_Click"
+                    Margin="-65,0,5,0"/>
+                    
+            <!-- Buton pentru traducerea inversă -->
+            <Button x:Name="ReverseTranslateButton"
+                    Text="↺ Translate Back"
+                    BackgroundColor="#c4c6c4"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Clicked="ReverseTranslateButton_Click"/>
+        </StackLayout>
+        <!-- Etichetă pentru textul "Mesaj" -->
+        <Label x:Name="Label"
+               Text="Mesaj"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Margin="95,226,0,0"
+               WidthRequest="66"
+               FontAttributes="Bold"
+               Grid.Column="1"/>
+               
+        <!-- Etichetă pentru afișarea rezultatului înregistrării -->
+        <Label x:Name="ResultLabel"
+               Text=""
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Margin="10,252,0,0"
+               WidthRequest="391"
+               Grid.ColumnSpan="2"
+               HeightRequest="60"/>
+               
+        <!-- Etichetă pentru textul "Mesaj tradus" -->
+        <Label x:Name="TLabel"
+               Text="Mesaj tradus"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               FontAttributes="Bold"
+               Margin="95,312,0,0"
+               WidthRequest="73"
+               Grid.Column="1"/>
+               
+        <!-- Etichetă pentru afișarea rezultatului traducerii -->
+        
+            <Label x:Name="ResultLabeltranslate"
+                           Text=""
+                           HorizontalOptions="Start"
+                           VerticalOptions="Start"
+                           Margin="10,356,0,0"
+                           WidthRequest="391"
+                           Grid.ColumnSpan="2"
+                           HeightRequest="60"/>
+        
+        <!-- ScrollView pentru istoricul traducerilor -->
+        <ScrollView 
+            Grid.ColumnSpan="2" 
+            Margin="465,-50,0,0"
+            WidthRequest="370">
+            <!-- StackLayout în interiorul ScrollView pentru a păstra istoricul traducerilor -->
+            <StackLayout x:Name="TranslationHistory" Padding="10" />
+        </ScrollView>
+    </Grid>
+</ContentPage>

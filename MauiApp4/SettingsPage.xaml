@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.SettingsPage"
+             Title="Setări">
+    
+
+    <StackLayout Padding="10">
+        <Label Text="Voice URL" />
+        <Entry x:Name="VoiceEntry" BackgroundColor="#e9eaed"/>
+
+        <Label Text="Authorization Token" />
+        <Entry x:Name="AuthorizationEntry" BackgroundColor="#e9eaed"/>
+
+        <Label Text="User ID" />
+        <Entry x:Name="UserIdEntry" BackgroundColor="#e9eaed"/>
+
+        <Button BackgroundColor="#c4c6c4" Text="Slavează Setările" Clicked="SaveButton_Click" />
+        <Button BackgroundColor="#c4c6c4" Text="Deschideți App Directory" Clicked="OpenAppDirectoryButton_Click" />
+        <Button BackgroundColor="#c4c6c4" Text="Afișare ID voci clonate" Clicked="GetClonedVoicesButton_Click" />
+
+        <!-- Buton pentru alegerea fișierului -->
+        <Button BackgroundColor="#c4c6c4" Text="Alege fișierul" Clicked="ChooseFileButton_Click" />
+        
+        <!-- Buton pentru crearea unei noi voci -->
+        <Button BackgroundColor="#c4c6c4" Text="Creați profil voce" Clicked="CreateVoiceButton_Click" />
+
+        <CollectionView x:Name="VoicesCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding id}" VerticalOptions="Center" />
+                        <Button Text="Copy" Clicked="CopyVoiceIdButton_Click" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

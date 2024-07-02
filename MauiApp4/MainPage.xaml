@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MauiApp4.MainPage">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu" BackgroundColor="#AADEFF">
+            <StackLayout>
+                <Label Text="Menu" 
+                       FontSize="18" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" />
+                <Button Text="Translator Voce" 
+                        WidthRequest="250"
+                        Clicked="OnTranslatorPageClicked"/>
+                <Button Text="Translator Text" 
+                        WidthRequest="250"
+                        Clicked="OnTextPageClicked"/>
+                <Button Text="Setări"
+                        WidthRequest="250"
+                        Clicked="SettingsButton_Click" />
+
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="Buna ziua, am să vă prezint Lucrarea de licentă!"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center" />
+                        </StackLayout>
+                        
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Elaborat de: Cordun Eduard"
+                                   VerticalOptions="End"
+                                   HorizontalOptions="End"
+                                   Margin="-20,-20,20,20" />
+                        </StackLayout>
+                    </Grid>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

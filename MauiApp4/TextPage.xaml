@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.TextPage"
+             Title="Translator Text">
+
+    <StackLayout Padding="10" Spacing="10">
+        <!-- Layout orizontal pentru selectarea limbilor -->
+        <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+            <!-- Picker pentru selectarea limbii sursă -->
+            <Picker x:Name="SourceLanguagePicker"
+                    BackgroundColor="#c4c6c4"
+                    Title="Limba sursă"
+                    HorizontalOptions="FillAndExpand"
+                    WidthRequest="90">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>ro</x:String> <!-- Limba română -->
+                        <x:String>en</x:String> <!-- Limba engleză -->
+                        <x:String>fr</x:String> <!-- Limba franceză -->
+                        <x:String>es</x:String> <!-- Limba spaniolă -->
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Picker pentru selectarea limbii țintă -->
+            <Picker x:Name="TargetLanguagePicker"
+                    BackgroundColor="#c4c6c4"
+                    Title="Limbă țintă"
+                    HorizontalOptions="FillAndExpand"
+                    WidthRequest="90">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>en</x:String> <!-- Limba engleză -->
+                        <x:String>fr</x:String> <!-- Limba franceză -->
+                        <x:String>es</x:String> <!-- Limba spaniolă -->
+                        <x:String>ro</x:String> <!-- Limba română -->
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </HorizontalStackLayout>
+
+        <!-- Câmp de intrare pentru textul de tradus -->
+        <Entry x:Name="TextInput"
+               Placeholder="Introduceți textul"
+               BackgroundColor="#e9eaed"
+               HorizontalOptions="FillAndExpand" />
+
+        <!-- Buton pentru inițierea traducerii -->
+        <Button x:Name="TranslateButton"
+                Text="Translate"
+                BackgroundColor="#c4c6c4"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                Clicked="TranslateButton_Click" />
+                
+        <!-- Etichetă pentru afișarea rezultatului traducerii -->
+        <Label x:Name="ResultLabeltranslate"
+               Text=""
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               FontAttributes="Bold" />
+               
+        <!-- ScrollView pentru istoricul traducerilor -->
+        <ScrollView>
+            <StackLayout x:Name="TranslationHistory" Padding="10" />
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
